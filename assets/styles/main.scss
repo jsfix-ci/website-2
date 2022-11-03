@@ -134,12 +134,13 @@ a #logo {
     overflow: hidden;
     z-index: -1;
 
-    background-image: url('../../assets/img/wave-bg.svg');
+    background-image: url('img/wave-bg.svg');
+    background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: $bg-accent-color;
 
-    @include mobile {
+    @media (max-width: 1170px) {
         background-image: none; // TODO: I really don't know how to make this work, so let's skip it for now.
     }
 }
