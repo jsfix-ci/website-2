@@ -62,6 +62,24 @@
     {{/* TODO: We should also do the badge-thingy like in the apps. Maybe then we don't even need this?  */}}
     <div id="home-reminders" style="margin-bottom: 50px;"></div>
 
+    {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+
+    {{ with $pages }}
+        <section id="home-blog-section">
+            <header>
+                <h1>{{ T "home-blog-section-title" }}</h1>
+                <p>{{ T "home-blog-section-desc" }} <a href="{{ "blog" | absURL }}">{{ T "home-blog-section-desc-link" }}</a></p>
+            </header>
+            <div class="border-dash"></div>
+            <ul class="article-list">
+                {{ range first 3 $pages }}
+                    <li>{{ partial "summary.html" . }}</li>
+                {{ end }}
+            </ul>
+            <a class="button button-secondary icon-right icon-arrow-right" href="{{ "blog" | absURL }}" style="margin-left: 20px;">{{ T "home-blog-section-read-more" }}</a>
+        </section>
+    {{ end }}
+
 
     <!--
     <section id="your-rights" class="feature-section">
