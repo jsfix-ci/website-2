@@ -1,6 +1,7 @@
 {{ define "hero" }}
 <div id="home-hero">
     <div class="container">
+        <div id="home-reminders"></div>
         <div id="home-hero-content">
             <div class="hero-left-col">
                 <div id="home-hero-line-1">{{ T "home-hero-line-1" }} </div>
@@ -59,8 +60,6 @@
         </div>
 
     <!-- TODO: This obviously isn't the final design. -->
-    {{/* TODO: We should also do the badge-thingy like in the apps. Maybe then we don't even need this?  */}}
-    <div id="home-reminders" style="margin-bottom: 50px;"></div>
 
     {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 
