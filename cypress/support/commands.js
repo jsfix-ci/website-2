@@ -48,6 +48,7 @@ Cypress.Commands.add('generatorStore', () =>
         return new Cypress.Promise((res, rej) => {
             let tries = 0;
             const interval = setInterval(() => {
+                console.log(win, win.generatorStoreApi);
                 if (win.generatorStoreApi?.getState) {
                     clearInterval(interval);
                     res(win.generatorStoreApi.getState());

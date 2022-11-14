@@ -14,6 +14,7 @@
 // ***********************************************************
 
 import './commands';
+import 'cypress-failed-log';
 
 // Output cookie changes in the console.
 Cypress.Cookies.debug(true);
