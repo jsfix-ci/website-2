@@ -52,7 +52,7 @@ function notifyOtherLanguages(preferred_language?: string, website_language?: st
 
 if (!useAppStore.getState().countrySet) {
     // TODO: Remove the cookie migration code in a year or so.
-    useAppStore.getState().changeCountry((Cookie.get('country') as Country) || guessUserCountry());
+    useAppStore.getState().changeCountry((JSON.parse(Cookie.get('country')) as Country) || guessUserCountry());
     Cookie.remove('country');
 
     const { language: preferred_language } = parseBcp47Tag(navigator.language);

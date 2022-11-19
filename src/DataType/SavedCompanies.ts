@@ -40,7 +40,7 @@ export class SavedCompanies {
     }
 
     getUserChanged() {
-        return Cookie.get('changed_saved_companies') === 'true';
+        return JSON.parse(Cookie.get('changed_saved_companies')) === 'true';
     }
     setUserChanged(value = true) {
         if (value)
