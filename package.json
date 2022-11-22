@@ -49,7 +49,7 @@
         "brutusin-json-forms": "https://github.com/brutusin/json-forms",
         "deepmerge": "^4.2.2",
         "immer": "^9.0.12",
-        "js-cookie": "^2.2.1",
+        "js-cookie": "^3.0.1",
         "letter-generator": "^2.0.2",
         "libphonenumber-js": "^1.7.23",
         "localforage": "^1.7.1",

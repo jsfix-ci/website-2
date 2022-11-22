@@ -36,7 +36,7 @@ const Generator = () => {
 
     const [isInWizardMode, setWizardMode] = useState(window.PARAMETERS['from'] === 'wizard');
     const run_wizard_tutorial =
-        window.PARAMETERS['from'] === 'wizard' && Cookie.get('finished_wizard_tutorial') !== 'true';
+        window.PARAMETERS['from'] === 'wizard' && JSON.parse(Cookie.get('finished_wizard_tutorial')) !== 'true';
 
     const tutorial = useRef();
 

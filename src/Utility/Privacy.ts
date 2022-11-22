@@ -36,7 +36,7 @@ export const PRIVACY_ACTIONS: Record<string, PrivacyAction> = {
 
 export class Privacy {
     static isAllowed(privacy_action: PrivacyAction) {
-        const cookie_value = Cookie.get(this.cookieNameForAction(privacy_action));
+        const cookie_value = JSON.parse(Cookie.get(this.cookieNameForAction(privacy_action)));
 
         if (cookie_value === undefined) return Privacy.dntEnabled() ? privacy_action.dnt : privacy_action.default;
         return cookie_value === 'true';
@@ -53,7 +53,7 @@ export class Privacy {
     }
 
     static clearAllCookies() {
-        Object.keys(Cookie.get()).forEach((cookie_name) => {
+        Object.keys(JSON.parse(Cookie.get())).forEach((cookie_name) => {
             Cookie.remove(cookie_name);
         });
     }

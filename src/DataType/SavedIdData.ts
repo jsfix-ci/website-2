@@ -182,7 +182,7 @@ export class SavedIdData {
     }
 
     static shouldAlwaysFill() {
-        return (Cookie.get('general-always_fill_in') ?? 'true') === 'true';
+        return (JSON.parse(Cookie.get('general-always_fill_in')) ?? 'true') === 'true';
     }
 }
 
